@@ -1,47 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital-Clock</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <div id="time">
-        <div class="circle" style="--clr:#ff2972">
-            <div class="dots hr_dots"></div>
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="hh"></circle>
-            </svg>
-            <div id="hours">00</div>
-        </div>
+    <div class="container">
+        <div id="time">
+            <div class="circle" style="--clr:#ff2972">
+                <div class="dots hr_dots"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="hh"></circle>
+                </svg>
+                <div id="hours">00</div>
+            </div>
 
-        <div class="circle" style="--clr:#fee800">
-            <div class="dots mm_dots"></div>
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="mm"></circle>
-            </svg>
-            <div id="minutes">00</div>
-        </div>
+            <div class="circle" style="--clr:#fee800">
+                <div class="dots mm_dots"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="mm"></circle>
+                </svg>
+                <div id="minutes">00</div>
+            </div>
 
-        <div class="circle" style="--clr:#04fc43">
-            <div class="dots sec_dots"></div>
-            <svg>
-                <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70" id="ss"></circle>
-            </svg>
-            <div id="second">00</div>
+            <div class="circle" style="--clr:#04fc43">
+                <div class="dots sec_dots"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" id="ss"></circle>
+                </svg>
+                <div id="second">00</div>
+            </div>
+            <div class="ap">
+                <div id="ampm">
+                    AM
+                </div>
+            </div>
         </div>
-        <div class="ap">
-            <div id="ampm">
-                AM
+        <!-- ------------------------------------------------------------------------------------------------------------------- -->
+        <div class="alarm-container">
+            <div class="alarm" id="alarm">
+                <div>
+                    <input  type="datetime-local" name="" id="input" class="input">
+                </div>
+                <div id="arrow" class="non_on_small">
+                    &#8594
+                </div>
+                <button class="btn" id="alarmButton">Set Alarm</button>
+            </div>
+            <div class="showList">
+                <div class="alarmList">
+                    <div class="showTime">
+                        <span id="hour">12</span>
+                    </div>
+                    <span class="dot non_on_small">:</span>
+                    <div class="showTime">
+                        <span id="min">00</span>
+                    </div>
+                    <span class="dot non_on_small">:</span>
+                    <div class="showTime">
+                        <span id="zone">PM</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    </div>
+
 
     <script src="/script.js"></script>
 </body>
+
 </html>

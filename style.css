@@ -4,6 +4,25 @@
     box-sizing: border-box;
     font-family:'popins', sans-serif;
 }
+.btn{
+    display: inline-block;
+    background-color: #1f2a36;
+    color: #5ddcff;
+    font-size: 1.1rem;
+    word-spacing: 2px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 6px;
+    min-width: 20vw;
+}
+.btn:hover{
+    animation: pulsate 1s ease-in-out;
+}
+@keyframes pulsate{
+    0%{
+        box-shadow: 0 0 25px #5ddcff,0 0 50px #4e00c2;
+    }
+}
 body{
     display: flex;
     flex-direction: column;
@@ -11,6 +30,13 @@ body{
     align-items: center;
     min-height: 100vh;
     background: #2f363e;
+}
+.container{
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #time{
     display: flex;
@@ -77,4 +103,97 @@ body{
     border-radius: 50%;
     top: -3px;
     box-shadow: 0 0 10px var(--clr), 0 0 70px var(--clr);
+}
+/* ------------------------------------------ */
+.alarm-container{
+    padding: 10px;
+}
+.alarm{
+    width: 90vw;
+    margin: 10px auto auto auto;
+    border-top: 1px solid #5ddcff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 120px;
+}
+#arrow{
+    font-size: 2.5rem;
+    color:yellow;
+    margin: 0 10px;
+}
+.input{
+    border: 1px solid #5ddcff;
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.showList .alarmList{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:0 12px;
+}
+.showList .alarmList .dot{
+    position:relative;
+    color: yellow;
+    font-size: 2rem;
+}
+.showList .showTime{
+    border: 1px solid #5ddcff;
+    border-radius: 50px;
+    padding: 10px;
+    color:#fee800;
+    font-size: 1.5rem;
+    margin:0 30px;
+    font-weight: bold;
+    min-width: 5vw;
+    text-align:center;
+}
+
+/* ---------------------------------------- */
+@media screen and (max-width:600px){
+    #time{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .alarm-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+    }
+    .alarm{
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .btn{
+        min-width: 35vw;
+        margin: 15px 0 0 0;
+    }
+    .non_on_small{
+        display: none;
+    }
+    .input{
+        min-width: 40vw;
+        font-size: 1rem;
+        letter-spacing:0;
+        word-spacing: 2px;
+        border-radius: 0;
+        padding: 10px;
+    }
+    .showList .showTime{
+        margin: auto 8px;
+        font-size: 1rem;
+    }
 }

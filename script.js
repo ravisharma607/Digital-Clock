@@ -1,3 +1,4 @@
+let alarmTime = null;
 setInterval(() => {
     let hours = document.getElementById('hours');
     let minutes = document.getElementById('minutes');
@@ -43,3 +44,40 @@ setInterval(() => {
     // 360/60 = 6
     sec_dots.style.transform = `rotate(${s * 6}deg)`;
 })
+// -------------------------  Alarm JS ------------------------------
+
+var audio = new Audio('audio/alarm.mp3');
+function ringBell(){
+    audio.play();
+}
+
+const alarmButton = document.getElementById('alarmButton');
+alarmButton.addEventListener('click', setAlarm);
+
+function setAlarm(){
+    setAlarmTime();
+}
+
+function setAlarmTime(){
+    now = new Date();
+    let input = document.getElementById('input');
+    alarmTime = input.value;
+    let setTime = new Date(alarmTime).getTime();
+    let getHour = new Date(alarmTime).getHours();
+    var suffix = getHour >= 12 ? "PM":"AM";
+    let getMinutes = new Date(alarmTime).getMinutes();
+    let setHour = document.getElementById('hour');
+    let setMin = document.getElementById('min');
+    let zone = document.getElementById('zone');
+    setHour.innerText = getHour;
+    setMin.innerText = getMinutes;
+    zone.innerText = suffix;
+
+    let timeToAlarm = setTime - now;
+    if(timeToAlarm >=0){
+        setTimeout(() => {
+            ringBell();
+
+        }, timeToAlarm);
+    }
+}
